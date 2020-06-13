@@ -1,0 +1,15 @@
+body[scheme="client_ligth"] {
+    --header_background: #1e1566!important;
+    --button_outline_border: #1e1566!important;
+    --button_outline_foreground: #1e1566!important;
+    --header_tab_active_background: #3732a2!important;
+    --button_primary_background: #3732a2!important;
+    --button_secondary_background: #d2d0e0!important;
+    --button_secondary_foreground: #1e1566!important;
+    --accent: #1e1566!important;
+    --header_tab_inactive_text: #7371e2!important;
+}
+
+.test {
+    background: red;
+}

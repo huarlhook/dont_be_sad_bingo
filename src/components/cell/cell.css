@@ -1,0 +1,45 @@
+.cell {
+    /*background: #FFF;*/
+    /*border: 2px #679fdb solid;*/
+    /*border-radius: 2em;*/
+    /*margin: 5px;*/
+    /*text-align: center;*/
+    /*vertical-align: center;*/
+    /*padding: 20px 5px;*/
+    /*display: inline-block;*/
+}
+
+
+.cell {
+    width: 20%;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 16px;
+    position: relative;
+}
+
+.cell::before {
+    padding-top: 100%;
+    content: '';
+    display: block;
+}
+
+.cell-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    padding: 8px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    left: 5px;
+    bottom: 5px;
+    border: 2px solid #679fdb;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #fff;
+
+    text-align: center;
+    vertical-align: middle;
+}

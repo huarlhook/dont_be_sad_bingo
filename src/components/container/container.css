@@ -1,5 +1,5 @@
 .container {
-    background: #299fff;
+    background: var(--bingo-bg);
     min-width: calc((100px + 10px) * 5);
     width: 100%;
     font-size: 0;

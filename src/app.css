@@ -1,15 +1,17 @@
-body[scheme="client_ligth"] {
-    --header_background: #1e1566!important;
-    --button_outline_border: #1e1566!important;
-    --button_outline_foreground: #1e1566!important;
-    --header_tab_active_background: #3732a2!important;
-    --button_primary_background: #3732a2!important;
-    --button_secondary_background: #d2d0e0!important;
-    --button_secondary_foreground: #1e1566!important;
-    --accent: #1e1566!important;
-    --header_tab_inactive_text: #7371e2!important;
+:root {
+    --bingo-bg: #a6d1f4;
 }
 
-.test {
-    background: red;
+/*.Panel__in, .FixedLayout__in {*/
+/*    background: var(--bingo-bg) !important;*/
+/*    box-shadow: 0 5px 5px 5px rgba(0,0 , 0, 0.25);*/
+/*}*/
+
+body[scheme="bright_light"], body[scheme="client_light"]{
+    --header_background: var(--bingo-bg) !important;
+
+
+    --background_content: #ccc!important;
+    --background_light: #ccc!important;
+    --background_page: #ccc!important;
 }

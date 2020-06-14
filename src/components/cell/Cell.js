@@ -1,26 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import './cell.css';
 
 const Cell = props => {
-    console.log(props);
+    const [activeClass, updateClass] = useState('cell-content');
 
-    const onClick = () => {
-        alert('click!');
+    const update = (event) => {
+        event.stopPropagation();
+        props.handler(props.index);
+        updateClass(activeClass === 'cell-content'
+            ? 'cell-content-active'
+            : 'cell-content');
     };
 
-    console.log(
-        window.document.body.clientWidth
+    return (
+        <div className="cell">
+            <div data-index={props.index} onClick={update} className={activeClass}>{props.children} {props.test}</div>
+        </div>
     );
-
-    return <div className="cell">
-                <div className="cell-content" onClick={onClick}>{props.children}</div>
-           </div>
-
 };
 
 Cell.propTypes = {
-    idd: PropTypes.number,
     cellTrigger: PropTypes.func,
 };
 

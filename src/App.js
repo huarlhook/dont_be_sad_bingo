@@ -22,20 +22,20 @@ const App = () => {
         });
 
         // delete
-        async function fetchData() {
-            const user = await bridge.send('VKWebAppGetUserInfo');
-            setUser(user);
-            setPopout(null);
-            setSnack(<Snackbar layout='vertical' onClose={() => setSnack(null)}>
-                Logged as: {user.first_name} {user.last_name}</Snackbar>)
-        }
-
-        fetchData();
+        // async function fetchData() {
+        //     const user = await bridge.send('VKWebAppGetUserInfo');
+        //     setUser(user);
+        //     setPopout(null);
+        //     setSnack(<Snackbar layout='vertical' onClose={() => setSnack(null)}>
+        //         Logged as: {user.first_name} {user.last_name}</Snackbar>)
+        // }
+        //
+        // fetchData();
         // delete
     }, []);
 
     return (
-        <ConfigProvider isWebView={true}>
+        <ConfigProvider scheme={'bright_light'} isWebView={true}>
             <View activePanel={activePanel} popout={snack}>
                 {/* panel ↓ */}
                 <Home id='home' fetchedUser={fetchedUser}/>

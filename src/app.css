@@ -1,17 +1,16 @@
 :root {
-    --bingo-bg: #a6d1f4;
+    --bingo-bg: #299fff;
 }
 
-/*.Panel__in, .FixedLayout__in {*/
-/*    background: var(--bingo-bg) !important;*/
-/*    box-shadow: 0 5px 5px 5px rgba(0,0 , 0, 0.25);*/
-/*}*/
+.Panel__in, .FixedLayout__in {
+    background: var(--bingo-bg) !important;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.25);
+}
 
-body[scheme="bright_light"], body[scheme="client_light"]{
+body[scheme="bright_light"], body[scheme="client_light"] {
     --header_background: var(--bingo-bg) !important;
 
-
-    --background_content: #ccc!important;
-    --background_light: #ccc!important;
-    --background_page: #ccc!important;
+    --background_content: var(--bingo-bg) !important;
+    --background_light: var(--bingo-bg) !important;
+    --background_page: var(--bingo-bg) !important;
 }

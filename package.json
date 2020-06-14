@@ -14,11 +14,12 @@
   "license": "AGPL-3.0",
   "devDependencies": {
     "cross-env": "^5.2.1",
+    "eslint-plugin-react-hooks": "^4.0.4",
     "react-hot-loader": "^4.12.21",
     "react-scripts": "^3.4.1"
   },
   "dependencies": {
-    "@vkontakte/icons": "^1.22.0",
+    "@vkontakte/icons": "^1.25.0",
     "@vkontakte/vk-bridge": "^2.2.2",
     "@vkontakte/vk-miniapps-deploy": "0.0.17",
     "@vkontakte/vkui": "^3.10.0",

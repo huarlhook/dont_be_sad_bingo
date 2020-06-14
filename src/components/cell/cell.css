@@ -1,20 +1,19 @@
-.cell {
-    /*background: #FFF;*/
-    /*border: 2px #679fdb solid;*/
-    /*border-radius: 2em;*/
-    /*margin: 5px;*/
-    /*text-align: center;*/
-    /*vertical-align: center;*/
-    /*padding: 20px 5px;*/
-    /*display: inline-block;*/
+@media only screen and (max-width: 748px) {
+    .cell {
+        font-size: 13px;
+    }
 }
 
+@media only screen and (min-width: 747px) {
+    .cell {
+        font-size: 16px;
+    }
+}
 
 .cell {
     width: 20%;
     box-sizing: border-box;
     display: inline-block;
-    font-size: 16px;
     position: relative;
 }
 
@@ -28,15 +27,15 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    overflow: hidden;
 
-    padding: 8px;
     position: absolute;
     top: 5px;
     right: 5px;
     left: 5px;
     bottom: 5px;
+    padding: 8px;
     border-radius: 16px;
-    overflow: hidden;
 
     text-align: center;
     word-wrap: break-word;

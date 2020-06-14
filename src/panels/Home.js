@@ -1,11 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import {PanelHeader, Button, Div, Panel, HorizontalScroll} from "@vkontakte/vkui";
-import Cell from "../components/cell/Cell";
+import {
+    PanelHeader,
+    Button,
+    Div,
+    Panel,
+    HorizontalScroll,
+} from "@vkontakte/vkui";
 import Container from "../components/container/Container";
-import bingoArray from "../bingoes";
 
-const Home = ({ id, go }) => {
+const Home = ({ id, setActiveModal, fieldStore, updateField }) => {
     return (
         <Panel id={id}>
             <PanelHeader separator={false}>
@@ -13,20 +16,20 @@ const Home = ({ id, go }) => {
             </PanelHeader>
 
             <HorizontalScroll>
-                <Container>
+                <Container fieldStore={fieldStore} updateField={updateField}>
                 </Container>
             </HorizontalScroll>
 
-            {/*<Div>*/}
-                {/*    <Button mode="commerce">Поделиться</Button>*/}
-                {/*</Div>*/}
-
+            <Div>
+                <Button stretched mode="overlay_primary" size="xl" onClick={() => setActiveModal('share')}>
+                    Поделиться своим бинго
+                </Button>
+                <Button stretched mode="overlay_primary" size="xl" onClick={() => setActiveModal('reset')}>
+                    Сбросить бинго
+                </Button>
+            </Div>
         </Panel>
     );
-};
-
-Home.propTypes = {
-    id: PropTypes.string.isRequired
 };
 
 export default Home;

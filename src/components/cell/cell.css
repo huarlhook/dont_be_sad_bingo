@@ -30,23 +30,29 @@
     overflow: hidden;
 
     position: absolute;
-    top: 5px;
-    right: 5px;
-    left: 5px;
-    bottom: 5px;
-    padding: 8px;
-    border-radius: 16px;
+    top: 6px;
+    right: 6px;
+    left: 6px;
+    bottom: 6px;
+    padding: 6px;
+    border-radius: 12px;
 
     text-align: center;
     word-wrap: break-word;
+
+    font-weight: 500;
 }
 
 .cell-content {
-    border: 1px solid #679fdb;
+    color: #2a73ae;
+    border: 3px solid var(--bingo-light-extra);
     background: #fff;
-    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
 }
 
 .cell-content-active {
-    background: red;
+    color: #1cb14d;
+    background: #e6ffee;
+    border: 3px solid #1cb14d;
+    box-shadow: none;
 }

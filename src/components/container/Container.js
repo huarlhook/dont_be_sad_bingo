@@ -17,8 +17,6 @@ const Container = ({ fieldStore, updateField }) => {
         );
     });
 
-    console.log('Hash: ', fieldStore);
-
     return (
         <div className="container" id="container">
             { cards }

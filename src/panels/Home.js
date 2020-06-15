@@ -5,14 +5,18 @@ import {
     Div,
     Panel,
     HorizontalScroll,
-} from "@vkontakte/vkui";
-import Container from "../components/container/Container";
+} from '@vkontakte/vkui';
+import Container from '../components/container/Container';
 
 const Home = ({ id, setActiveModal, fieldStore, updateField }) => {
+    const vkt = (
+        <Div className={'PanelHeader__vkt'}><img src={'./vkt.svg'} height={30}/> × Бинго</Div>
+    );
+
     return (
         <Panel id={id}>
-            <PanelHeader separator={false}>
-                Хайзенбинго VK
+            <PanelHeader left={vkt} separator={false}>
+
             </PanelHeader>
 
             <HorizontalScroll>
@@ -20,12 +24,15 @@ const Home = ({ id, setActiveModal, fieldStore, updateField }) => {
                 </Container>
             </HorizontalScroll>
 
-            <Div>
+            <Div className='Div__vkt_share'>
                 <Button stretched mode="overlay_primary" size="xl" onClick={() => setActiveModal('share')}>
                     Поделиться своим бинго
                 </Button>
-                <Button stretched mode="overlay_primary" size="xl" onClick={() => setActiveModal('reset')}>
-                    Сбросить бинго
+            </Div>
+
+            <Div className='Div__vkt_reset'>
+                <Button stretched size="xl" onClick={() => setActiveModal('reset')}>
+                    Сбросить всё
                 </Button>
             </Div>
         </Panel>

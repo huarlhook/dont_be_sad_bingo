@@ -39,10 +39,6 @@ const App = () => {
                 schemeAttribute.value = data.scheme ? data.scheme : 'bright_light';
                 document.body.attributes.setNamedItem(schemeAttribute);
             }
-
-            if (type === 'VKWebAppCopyTextResult') {
-                console.log('err');
-            }
         });
     }, []);
 
@@ -67,13 +63,8 @@ const App = () => {
         return `https://vk.com/app7490838#${fieldStore}`;
     };
 
-    const copyAndExit = () => {
-        //bridge.send('VKWebAppCopyText', {text: "Этот текст будет скопирован в буфер обмена."}).catch();
-        setActiveModal(null);
-    };
-
     const shareAction = () => {
-        bridge.send("VKWebAppShare", {"link": getShareUrl()})
+        bridge.send('VKWebAppShare', {'link': getShareUrl()})
             .finally(() => setActiveModal(null));
     };
 
@@ -87,7 +78,7 @@ const App = () => {
             <ModalCard
                 id='share'
                 onClose={() => setActiveModal(null)}
-                header="Поделиться ссылкой"
+                header='Поделиться ссылкой'
                 actions={[ { title: 'Поделиться результатом', mode: 'primary', action: () => { shareAction('') } } ]}
             >
                 <Textarea value={getShareUrl()} readonly={true} />
@@ -96,7 +87,7 @@ const App = () => {
             <ModalCard
                 id='reset'
                 onClose={() => setActiveModal(null)}
-                header="Сбросить бинго?"
+                header='Сбросить бинго?'
                 actions={ [{ title: 'Да', mode: 'primary', action: () => { resetAction() }}] }
             >
             </ModalCard>
@@ -106,11 +97,8 @@ const App = () => {
     return (
         <ConfigProvider scheme={'bright_light'} isWebView={true}>
             <View activePanel={activePanel} modal={modal}>
-                {/* panel ↓ */}
                 <Home id='home' setActiveModal={setActiveModal} fieldStore={fieldStore} updateField={updateField} />
             </View>
-
-
         </ConfigProvider>
     );
 };

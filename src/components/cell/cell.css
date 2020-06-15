@@ -52,9 +52,9 @@
 }
 
 .cell-content-active {
-    color: #1cb14d;
+    color: var(--bingo-alter);
     background: #e6ffee;
-    border: 3px solid #1cb14d;
+    border: 3px solid var(--bingo-alter);
     box-shadow: none;
     transition: all 0.3s ease-out;
 }

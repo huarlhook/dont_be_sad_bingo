@@ -2,6 +2,7 @@
   "name": "bingo",
   "version": "1.0.0",
   "description": "",
+  "homepage": "./",
   "main": "index.js",
   "scripts": {
     "start": "cross-env PORT=10888 HTTPS=false react-scripts start",

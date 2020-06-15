@@ -42,7 +42,7 @@
     box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.10);
 }
 
-body[scheme="bright_light"], body[scheme="client_light"] {
+body[scheme="bright_light"], body[scheme="client_light"], [scheme="space_gray"]  {
     --header_background: var(--bingo-bg) !important;
     --background_content: var(--bingo-bg) !important;
     --background_light: var(--bingo-bg) !important;

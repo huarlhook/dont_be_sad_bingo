@@ -1,22 +1,29 @@
-import React, {useState, useEffect, useLayoutEffect} from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import bridge from '@vkontakte/vk-bridge';
 import {
     View,
     ConfigProvider,
     ModalRoot,
     ModalCard,
-    Textarea,
+    Div,
+    Headline,
+    Text,
+    Link,
+    FormLayout,
+    FormLayoutGroup,
+    Input,
 } from '@vkontakte/vkui';
+import Home from './panels/Home';
 import '@vkontakte/vkui/dist/vkui.css';
 import './app.css';
-import Home from './panels/Home';
 
+const CONST_APP_ID = 'https://vk.com/app7490838';
 
 const App = () => {
     useLayoutEffect(() => {
         function resize() {
-            const temp1 = document.getElementById('container').parentElement;
-            temp1.scrollLeft = (temp1.scrollWidth - temp1.offsetWidth) / 2;
+            const element = document.getElementById('container').parentElement;
+            element.scrollLeft = (element.scrollWidth - element.offsetWidth) / 2;
         }
 
         window.addEventListener('resize', resize, false);
@@ -53,18 +60,16 @@ const App = () => {
         }
     };
 
-    const isMobile = window.innerWidth < 748; // ?
-
     const [activePanel, setActivePanel] = useState('home');
     const [activeModal, setActiveModal] = useState(null);
     const [fieldStore, updateField] = useState(getHash);
 
     const getShareUrl = () => {
-        return `https://vk.com/app7490838#${fieldStore}`;
+        return `${CONST_APP_ID}#${fieldStore}`;
     };
 
-    const shareAction = () => {
-        bridge.send('VKWebAppShare', {'link': getShareUrl()})
+    const shareAction = (url) => {
+        bridge.send('VKWebAppShare', {'link': url})
             .finally(() => setActiveModal(null));
     };
 
@@ -78,18 +83,29 @@ const App = () => {
             <ModalCard
                 id='share'
                 onClose={() => setActiveModal(null)}
-                header='Поделиться ссылкой'
-                actions={[ { title: 'Поделиться результатом', mode: 'primary', action: () => { shareAction('') } } ]}
+                header='Поделиться своим бинго'
+                actions={[ { title: 'Поделиться результатом', mode: 'primary', action: () => { shareAction(getShareUrl()) } } ]}
             >
-                <Textarea value={getShareUrl()} readonly={true} />
+                <Div>
+                    <FormLayout>
+                        <Input type="text" defaultValue={getShareUrl()} readOnly={true} />
+                    </FormLayout>
+
+                    <Headline align={'center'} weight="regular" style={{ marginTop: 2 }}>
+                        Скопируйте ссылку, либо нажмите кнпоку ниже чтобы поделиться
+                    </Headline>
+                </Div>
             </ModalCard>
 
             <ModalCard
                 id='reset'
                 onClose={() => setActiveModal(null)}
                 header='Сбросить бинго?'
-                actions={ [{ title: 'Да', mode: 'primary', action: () => { resetAction() }}] }
+                actions={ [{ title: 'Дааа...', mode: 'primary', action: () => { resetAction() }}] }
             >
+                <Div>
+                    <Text weight="regular" style={{ marginTop: 5 }}>...и очистить душу от пожаров.</Text>
+                </Div>
             </ModalCard>
         </ModalRoot>
     );

@@ -1,8 +1,8 @@
 import React from 'react';
 import './container.css';
-import bingoArray from "../../bingoes";
-import Cell from "../cell/Cell";
-import {isChecked, setChecked} from "../../helpers/bitStorage";
+import bingoArray from '../../bingoes';
+import Cell from '../cell/Cell';
+import { isChecked, setChecked } from '../../helpers/bitStorage';
 
 const Container = ({ fieldStore, updateField }) => {
     const handler = (index) => {

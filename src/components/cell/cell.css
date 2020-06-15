@@ -48,6 +48,7 @@
     border: 3px solid var(--bingo-light-extra);
     background: #fff;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-out;
 }
 
 .cell-content-active {
@@ -55,4 +56,5 @@
     background: #e6ffee;
     border: 3px solid #1cb14d;
     box-shadow: none;
+    transition: all 0.3s ease-out;
 }

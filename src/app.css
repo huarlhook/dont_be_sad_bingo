@@ -43,7 +43,6 @@
 
 body[scheme="bright_light"], body[scheme="client_light"] {
     --header_background: var(--bingo-bg) !important;
-
     --background_content: var(--bingo-bg) !important;
     --background_light: var(--bingo-bg) !important;
     --background_page: var(--bingo-bg) !important;

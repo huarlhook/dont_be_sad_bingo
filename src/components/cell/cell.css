@@ -1,0 +1,60 @@
+@media only screen and (max-width: 748px) {
+    .cell {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (min-width: 747px) {
+    .cell {
+        font-size: 16px;
+    }
+}
+
+.cell {
+    width: 20%;
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+}
+
+.cell::before {
+    padding-top: 100%;
+    content: '';
+    display: block;
+}
+
+.cell-content, .cell-content-active {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    left: 6px;
+    bottom: 6px;
+    padding: 6px;
+    border-radius: 12px;
+
+    text-align: center;
+    word-wrap: break-word;
+
+    font-weight: 500;
+}
+
+.cell-content {
+    color: #2a73ae;
+    border: 3px solid var(--bingo-light-extra);
+    background: #fff;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-out;
+}
+
+.cell-content-active {
+    color: var(--bingo-alter);
+    background: #e6ffee;
+    border: 3px solid var(--bingo-alter);
+    box-shadow: none;
+    transition: all 0.3s ease-out;
+}

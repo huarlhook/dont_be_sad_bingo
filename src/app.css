@@ -1,0 +1,50 @@
+:root {
+    --bingo-bg-dark: #299fff;
+    --bingo-bg: #5AB5FF;
+    --bingo-bright: #FFFFFF;
+    --bingo-light-extra: #e7f4fe;
+    --bingo-light: #b8defd;
+    --bingo-alter: #1cb14d;
+}
+
+.PanelHeader__vkt {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--bingo-bright);
+    margin-top: 5px;
+}
+
+.PanelHeader__vkt img {
+    vertical-align: middle;
+    margin: -5px 1px 0 0;
+}
+
+.PanelHeader__in {
+    background: var(--bingo-bg-dark) !important;
+    box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.10);
+}
+
+.Div__vkt {
+}
+
+.Div__vkt_share button {
+    margin-top: 5px;
+    border: 3px solid var(--bingo-light);
+    color: var(--bingo-bg-dark);
+    background: var(--bingo-bright);
+    box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.10);
+}
+
+.Div__vkt_reset button {
+    opacity: 0.8;
+    color: #fc7272;
+    background: #fee7e7;
+    box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.10);
+}
+
+body[scheme="bright_light"], body[scheme="client_light"] {
+    --header_background: var(--bingo-bg) !important;
+    --background_content: var(--bingo-bg) !important;
+    --background_light: var(--bingo-bg) !important;
+    --background_page: var(--bingo-bg) !important;
+}

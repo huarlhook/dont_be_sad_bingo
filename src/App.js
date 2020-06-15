@@ -8,9 +8,7 @@ import {
     Div,
     Headline,
     Text,
-    Link,
     FormLayout,
-    FormLayoutGroup,
     Input,
 } from '@vkontakte/vkui';
 import Home from './panels/Home';
@@ -39,17 +37,7 @@ const App = () => {
         }
     }, []);
 
-    useEffect(() => {
-        bridge.subscribe(({ detail: { type, data }}) => {
-            if (type === 'VKWebAppUpdateConfig') {
-                const schemeAttribute = document.createAttribute('scheme');
-                schemeAttribute.value = data.scheme ? data.scheme : 'bright_light';
-                document.body.attributes.setNamedItem(schemeAttribute);
-            }
-        });
-    }, []);
-
-    const getHash = () => {
+    function getHash() {
         if (window.location.hash === '') {
             return 0;
         }
@@ -58,9 +46,9 @@ const App = () => {
         if (Number.isFinite(+value)) {
             return value;
         }
-    };
+    }
 
-    const [activePanel, setActivePanel] = useState('home');
+    const [activePanel] = useState('home');
     const [activeModal, setActiveModal] = useState(null);
     const [fieldStore, updateField] = useState(getHash);
 
@@ -77,6 +65,26 @@ const App = () => {
         updateField(0);
         setActiveModal(null);
     };
+
+    useEffect(() => {
+        bridge.subscribe(({ detail: { type, data }}) => {
+            if (type === 'VKWebAppUpdateConfig') {
+                const schemeAttribute = document.createAttribute('scheme');
+                schemeAttribute.value = data.scheme ? data.scheme : 'bright_light';
+                document.body.attributes.setNamedItem(schemeAttribute);
+            }
+
+            if (type === 'VKWebAppViewRestore') {
+                const hash = getHash();
+
+                if (!hash) {
+                    return;
+                }
+
+                updateField(hash);
+            }
+        });
+    }, []);
 
     const modal = (
         <ModalRoot activeModal={activeModal} onClose={ () => setActiveModal(null) }>

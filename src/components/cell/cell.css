@@ -41,6 +41,7 @@
     word-wrap: break-word;
 
     font-weight: 500;
+    hyphens: auto;
 }
 
 .cell-content {

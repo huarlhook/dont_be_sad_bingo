@@ -22,15 +22,15 @@ const Home = ({ id, setActiveModal, fieldStore, updateField }) => {
         <Panel id={id}>
             <PanelHeader left={vkt} separator={false} />
 
-            <HorizontalScroll>
-                <Container fieldStore={fieldStore} updateField={updateField} />
-            </HorizontalScroll>
-
             <Div className='Div__vkt_share'>
                 <Button stretched mode="overlay_primary" size="xl" onClick={() => setActiveModal('share')}>
                     Поделиться своим бинго
                 </Button>
             </Div>
+
+            <HorizontalScroll>
+                <Container fieldStore={fieldStore} updateField={updateField} />
+            </HorizontalScroll>
 
             <Div className='Div__vkt_reset'>
                 <Button stretched size="xl" onClick={() => setActiveModal('reset')}>

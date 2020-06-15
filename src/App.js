@@ -65,7 +65,7 @@ const App = () => {
     const [fieldStore, updateField] = useState(getHash);
 
     const getShareUrl = () => {
-        return `${CONST_APP_ID}#${fieldStore}`;
+        return `${CONST_APP_ID}`.concat(fieldStore ? `#${fieldStore}` : '');
     };
 
     const shareAction = (url) => {

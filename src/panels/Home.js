@@ -12,9 +12,7 @@ import Container from '../components/container/Container';
 const Home = ({ id, setActiveModal, fieldStore, updateField }) => {
     const vkt = (
         <Div className={'PanelHeader__vkt'}>
-            <Link href='https://vk.com/testers'>
-                <img src={'./vkt.svg'} height={30}/>
-            </Link> × Бинго
+            Не грусти бинго
         </Div>
     );
 

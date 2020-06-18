@@ -17,7 +17,7 @@ import Home from './panels/Home';
 import '@vkontakte/vkui/dist/vkui.css';
 import './app.css';
 
-const CONST_APP_ID = 'https://vk.com/app7490838';
+const CONST_APP_ID = 'https://vk.com/app7515081';
 
 const App = () => {
     useLayoutEffect(() => {

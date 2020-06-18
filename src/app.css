@@ -1,10 +1,10 @@
 :root {
-    --bingo-bg-dark: #299fff;
-    --bingo-bg: #5AB5FF;
+    --bingo-bg-dark: #51A460;
+    --bingo-bg: #5CB66C;
     --bingo-bright: #FFFFFF;
-    --bingo-light-extra: #e7f4fe;
-    --bingo-light: #b8defd;
-    --bingo-alter: #1cb14d;
+    --bingo-light-extra: #DDFCE3;
+    --bingo-light: #B0EFBB;
+    --bingo-alter: #1CB14D;
 }
 
 .PanelHeader__vkt {
@@ -42,7 +42,7 @@
     box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.10);
 }
 
-body[scheme="bright_light"], body[scheme="client_light"] {
+body[scheme="bright_light"], body[scheme="client_light"], body[scheme="space_gray"] {
     --header_background: var(--bingo-bg) !important;
     --background_content: var(--bingo-bg) !important;
     --background_light: var(--bingo-bg) !important;

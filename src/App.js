@@ -92,7 +92,7 @@ const App = () => {
                     </FormLayout>
 
                     <Headline align={'center'} weight="regular" style={{ marginTop: 2 }}>
-                        Скопируйте ссылку, либо нажмите кнпоку ниже чтобы поделиться
+                        Скопируйте ссылку, либо нажмите кнопку ниже чтобы поделиться
                     </Headline>
                 </Div>
             </ModalCard>
